@@ -1,4 +1,9 @@
 <div class="sidebar">
+    <!-- Botón para mostrar/ocultar sidebar en dispositivos móviles -->
+    <button class="btn btn-dark d-md-none toggle-sidebar">
+        <i class="bi bi-list"></i>
+    </button>
+
     <ul class="navbar-nav flex-column">
         <li class="nav-item">
             <a class="nav-link active" href="#">
@@ -26,43 +31,70 @@
     .sidebar {
         position: fixed;
         top: 0;
-        left: 0;
+        left: -250px; /* Inicialmente oculto fuera de la pantalla */
         height: 100%;
         width: 250px;
-        /* Ancho del sidebar */
         background-color: #343a40;
-        /* Color de fondo del sidebar */
         padding-top: 1rem;
-        /* Espaciado superior */
+        transition: left 0.3s ease; /* Transición suave al mostrar/ocultar */
+    }
+
+    .sidebar.open {
+        left: 0; /* Mostrar el sidebar cuando está abierto */
     }
 
     .sidebar ul.navbar-nav {
         padding-left: 0;
-        /* Elimina el padding izquierdo de la lista */
     }
 
     .sidebar .nav-link {
         color: #dee2e6;
-        /* Color del texto */
     }
 
     .sidebar .nav-link:hover {
         background-color: #495057;
-        /* Color de fondo al pasar el mouse */
     }
 
     .sidebar .active {
         background-color: #6c757d;
-        /* Color de fondo del elemento activo */
     }
 
     .sidebar .bi {
         margin-right: 0.5rem;
-        /* Espacio entre el ícono y el texto */
     }
 
     .sidebar span {
         font-size: 0.9rem;
-        /* Tamaño de la fuente del texto */
+    }
+
+    /* Estilos para el botón de alternar */
+    .toggle-sidebar {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+    }
+
+    /* Estilos para el botón de alternar en dispositivos móviles */
+    @media (min-width: 768px) {
+        .toggle-sidebar {
+            display: none; /* Ocultar el botón en pantallas más grandes */
+        }
+
+        .sidebar {
+            left: 0; /* Mostrar sidebar en pantallas más grandes */
+        }
     }
 </style>
+
+<!-- Scripts -->
+<script>
+    // Obtener referencia al botón de alternar y al sidebar
+    const toggleButton = document.querySelector('.toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+
+    // Escuchar clics en el botón de alternar
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open'); // Alternar la clase 'open' en el sidebar
+    });
+</script>
