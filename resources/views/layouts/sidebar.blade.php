@@ -75,14 +75,21 @@
         z-index: 1000;
     }
 
-    /* Estilos para el botón de alternar en dispositivos móviles */
+    /* Media query para ocultar el sidebar en pantallas pequeñas */
+    @media (max-width: 767px) {
+        .sidebar {
+            display: none; /* Ocultar el sidebar por completo en pantallas pequeñas */
+        }
+    }
+
+    /* Media query para mostrar el botón de alternar en pantallas medianas y grandes */
     @media (min-width: 768px) {
-        .toggle-sidebar {
-            display: none; /* Ocultar el botón en pantallas más grandes */
+        .sidebar {
+            left: 0; /* Mostrar el sidebar en pantallas medianas y grandes */
         }
 
-        .sidebar {
-            left: 0; /* Mostrar sidebar en pantallas más grandes */
+        .toggle-sidebar {  /* Mostrar botón de alternar */
+            display: block;
         }
     }
 </style>
