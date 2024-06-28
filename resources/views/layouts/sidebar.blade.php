@@ -1,33 +1,39 @@
-<div class="sidebar">
-    <!-- Botón para mostrar/ocultar sidebar en dispositivos móviles -->
-    <button class="btn btn-dark d-md-none toggle-sidebar">
+<div class="sidebar-container">
+    <!-- Botón para mostrar/ocultar sidebar en todos los dispositivos -->
+    <button class="btn btn-dark toggle-sidebar">
         <i class="bi bi-list"></i>
     </button>
 
-    <ul class="navbar-nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">
-                <i class="bi bi-house-door"></i>
-                <span>Inicio</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="bi bi-person"></i>
-                <span>Perfil</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="bi bi-gear"></i>
-                <span>Configuración</span>
-            </a>
-        </li>
-        <!-- Otros elementos de menú -->
-    </ul>
+    <div class="sidebar">
+        <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <i class="bi bi-house-door"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-person"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-gear"></i>
+                    <span>Configuración</span>
+                </a>
+            </li>
+            <!-- Otros elementos de menú -->
+        </ul>
+    </div>
 </div>
 
 <style>
+    .sidebar-container {
+        position: relative;
+    }
+
     .sidebar {
         position: fixed;
         top: 0;
@@ -70,23 +76,32 @@
 
     /* Estilos para el botón de alternar */
     .toggle-sidebar {
-        position: absolute;
+        display: block;
+        position: fixed;
         top: 1rem;
         left: 1rem;
         z-index: 1000;
     }
 
-    /* Media query para mostrar el botón de alternar en pantallas pequeñas */
-    @media (max-width: 767px) {
-        .toggle-sidebar {
-            display: block;
-        }
-    }
-
-    /* Media query para ocultar el sidebar en pantallas pequeñas */
+    /* Media query para mostrar el sidebar en pantallas pequeñas */
     @media (max-width: 767px) {
         .sidebar {
             left: -250px; /* Ocultar el sidebar por completo en pantallas pequeñas */
+        }
+    }
+
+    /* Media query para mostrar el sidebar y ocultar el botón en pantallas medianas y grandes */
+    @media (min-width: 768px) {
+        .sidebar {
+            left: -250px; /* Ocultar el sidebar por completo en pantallas medianas y grandes */
+        }
+
+        .sidebar.open {
+            left: 0; /* Mostrar el sidebar cuando está abierto */
+        }
+
+        .toggle-sidebar {
+            display: block; /* Mostrar el botón de alternar en pantallas medianas y grandes */
         }
     }
 </style>
