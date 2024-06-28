@@ -37,6 +37,7 @@
         background-color: #343a40;
         padding-top: 1rem;
         transition: left 0.3s ease; /* Transición suave al mostrar/ocultar */
+        z-index: 999; /* Asegurar que esté sobre otros contenidos */
     }
 
     .sidebar.open {
@@ -69,39 +70,37 @@
 
     /* Estilos para el botón de alternar */
     .toggle-sidebar {
-        position: fixed;
+        position: absolute;
         top: 1rem;
         left: 1rem;
         z-index: 1000;
     }
 
-    /* Media query para ocultar el sidebar en pantallas pequeñas */
+    /* Media query para mostrar el botón de alternar en pantallas pequeñas */
     @media (max-width: 767px) {
-        .sidebar {
-            display: none; /* Ocultar el sidebar por completo en pantallas pequeñas */
+        .toggle-sidebar {
+            display: block;
         }
     }
 
-    /* Media query para mostrar el botón de alternar en pantallas medianas y grandes */
-    @media (min-width: 768px) {
+    /* Media query para ocultar el sidebar en pantallas pequeñas */
+    @media (max-width: 767px) {
         .sidebar {
-            left: 0; /* Mostrar el sidebar en pantallas medianas y grandes */
-        }
-
-        .toggle-sidebar {  /* Mostrar botón de alternar */
-            display: block;
+            left: -250px; /* Ocultar el sidebar por completo en pantallas pequeñas */
         }
     }
 </style>
 
 <!-- Scripts -->
 <script>
-    // Obtener referencia al botón de alternar y al sidebar
-    const toggleButton = document.querySelector('.toggle-sidebar');
-    const sidebar = document.querySelector('.sidebar');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener referencia al botón de alternar y al sidebar
+        const toggleButton = document.querySelector('.toggle-sidebar');
+        const sidebar = document.querySelector('.sidebar');
 
-    // Escuchar clics en el botón de alternar
-    toggleButton.addEventListener('click', () => {
-        sidebar.classList.toggle('open'); // Alternar la clase 'open' en el sidebar
+        // Escuchar clics en el botón de alternar
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('open'); // Alternar la clase 'open' en el sidebar
+        });
     });
 </script>
