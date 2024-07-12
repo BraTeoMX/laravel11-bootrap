@@ -1,11 +1,15 @@
 <div class="sidebar-container">
     <!-- Botón para mostrar/ocultar sidebar en todos los dispositivos -->
-    <button class="btn btn-dark toggle-sidebar">
-        <i class="bi bi-list"></i>
+    <button class="btn btn-light toggle-sidebar">
+        <i class="bi bi-list">Menu</i>
     </button>
 
     <div class="sidebar">
         <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+                <br>
+                <br>
+            </li>
             <li class="nav-item">
                 <a class="nav-link active" href="#">
                     <i class="bi bi-house-door"></i>
@@ -83,6 +87,10 @@
         z-index: 1000;
     }
 
+    .toggle-sidebar.active {
+        background-color: #6c757d; /* Cambiar el color del botón cuando el sidebar está visible */
+    }
+
     /* Media query para mostrar el sidebar en pantallas pequeñas */
     @media (max-width: 767px) {
         .sidebar {
@@ -116,6 +124,7 @@
         // Escuchar clics en el botón de alternar
         toggleButton.addEventListener('click', () => {
             sidebar.classList.toggle('open'); // Alternar la clase 'open' en el sidebar
+            toggleButton.classList.toggle('active'); // Alternar la clase 'active' en el botón
         });
     });
 </script>
