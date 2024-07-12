@@ -1,7 +1,7 @@
 <div class="sidebar-container">
     <!-- Botón para mostrar/ocultar sidebar en todos los dispositivos -->
     <button class="btn btn-light toggle-sidebar">
-        <i class="bi bi-list">Menu</i>
+        <i class="bi bi-list"> Menu</i>
     </button>
 
     <div class="sidebar">

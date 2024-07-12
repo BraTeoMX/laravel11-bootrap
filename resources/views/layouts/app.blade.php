@@ -9,7 +9,6 @@
 
     <title>{{ config('app.name', 'Sistema de pruebas') }}</title>
 
-
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
@@ -73,16 +72,12 @@
 
         <main class="py-4">
             <div class="container-fluid">
-                <div class="row">
                     <!-- Sidebar -->
-                    <div class="col-md-3 col-lg-2 sidebar-container">
                         @include('layouts.sidebar')
-                    </div>
                     <!-- Contenido Principal -->
-                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <main class="row">
                         @yield('content')
                     </main>
-                </div>
             </div>
         </main>
     </div>
