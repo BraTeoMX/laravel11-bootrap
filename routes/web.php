@@ -16,8 +16,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
+    // Ruta para la página de inicio
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     // Rutas para categorías

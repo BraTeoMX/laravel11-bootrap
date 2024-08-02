@@ -11,7 +11,7 @@
                 <br>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="{{ route('home') }}">
                     <i class="bi bi-house-door"></i>
                     <span>Inicio</span>
                 </a>
