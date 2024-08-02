@@ -5,14 +5,14 @@
     </button>
 
     <div class="sidebar">
-        <ul class="navbar-nav flex-column">
+        <ul class="navbar-nav flex-column ps-3"> <!-- Aquí agregamos la clase ps-3 -->
             <li class="nav-item">
                 <br>
                 <br>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('home') }}">
-                    <i class="mdi mdi-cow custom-icon-size"></i>
+                    <i class="mdi mdi-google-downasaur custom-icon-size"></i>
                     <span>Inicio</span>
                 </a>
             </li>
@@ -29,6 +29,36 @@
                 </a>
             </li>
             <!-- Otros elementos de menú -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="mdi mdi-ghost-off-outline custom-icon-size"></i>
+                    <span>Aqui nadamas para ocupar espacio</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="mdi mdi-centos custom-icon-size"></i>
+                    <span>lorep men up</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="mdi mdi-cookie-alert-outline custom-icon-size"></i>
+                    <span>lorep men up</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="mdi mdi-cow-off custom-icon-size"></i>
+                    <span>lorep men up</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="mdi mdi-virus-outline custom-icon-size"></i>
+                    <span>lorep men up</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
