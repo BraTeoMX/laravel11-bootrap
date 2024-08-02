@@ -11,6 +11,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/materialdesignicons.min.css') }}">
 
+    <!-- Incluye esto en la sección <head> de tu archivo Blade -->
+    <link rel="stylesheet" href="{{ asset('sweetAlert2/sweetalert2.min.css') }}">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -85,5 +88,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Incluye esto justo antes de cerrar la etiqueta </body> de tu archivo Blade -->
+    <script src="{{ asset('sweetAlert2/sweetalert2.all.min.js') }}"></script>
 </body>
 </html>
