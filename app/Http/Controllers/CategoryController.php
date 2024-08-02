@@ -2,46 +2,53 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index()
     {
         $categories = Category::all();
-        return view('categorias.index', compact('categories'));
-    }
-
-    public function create()
-    {
-        return view('categorias.create');
+        return view('categories.index', compact('categories'));
     }
 
     public function store(Request $request)
     {
-        // Validar y almacenar la categoría
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        Category::create($validated);
+
+        return redirect()->route('categories.index')
+            ->with('success', 'Categoría creada exitosamente.');
     }
 
-    public function show($id)
+    public function edit(Category $category)
     {
-        $category = Category::find($id);
-        return view('categorias.show', compact('category'));
+        return view('categories.edit', compact('category'));
     }
 
-    public function edit($id)
+    public function update(Request $request, Category $category)
     {
-        $category = Category::find($id);
-        return view('categorias.edit', compact('category'));
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $category->update($validated);
+
+        return redirect()->route('categories.index')
+            ->with('success', 'Categoría actualizada exitosamente.');
     }
 
-    public function update(Request $request, $id)
+    public function destroy(Category $category)
     {
-        // Validar y actualizar la categoría
-    }
+        $category->delete();
 
-    public function destroy($id)
-    {
-        // Eliminar la categoría
+        return redirect()->route('categories.index')
+            ->with('success', 'Categoría eliminada exitosamente.');
     }
 }
