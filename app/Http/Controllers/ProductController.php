@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
         // Aquí podrías obtener productos de la base de datos y pasarlos a la vista
         $products = []; // Esto es solo un ejemplo
-        return view('productos.producto', compact('products'));
+        return view('productos.index', compact('products'));
     }
 
     // Mostrar el formulario para crear un nuevo producto
