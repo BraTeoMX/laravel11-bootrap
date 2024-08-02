@@ -12,19 +12,19 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('home') }}">
-                    <i class="bi bi-house-door"></i>
+                    <i class="mdi mdi-cow custom-icon-size"></i>
                     <span>Inicio</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="bi bi-person"></i>
+                    <i class="mdi mdi-egg-off custom-icon-size"></i>
                     <span>Perfil</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="bi bi-gear"></i>
+                    <i class="mdi mdi-radiology-box-outline custom-icon-size"></i>
                     <span>Configuración</span>
                 </a>
             </li>
@@ -34,6 +34,10 @@
 </div>
 
 <style>
+
+    .custom-icon-size {
+        font-size: 22px; /* Cambia este valor al tamaño deseado */
+    }
     .sidebar-container {
         position: relative;
     }
