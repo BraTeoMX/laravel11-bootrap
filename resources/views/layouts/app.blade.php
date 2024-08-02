@@ -72,8 +72,10 @@
 
         <main class="py-4">
             <div class="container-fluid">
-                    <!-- Sidebar -->
+                    @auth
+                        <!-- Sidebar -->
                         @include('layouts.sidebar')
+                    @endauth
                     <!-- Contenido Principal -->
                     <main class="row">
                         @yield('content')
