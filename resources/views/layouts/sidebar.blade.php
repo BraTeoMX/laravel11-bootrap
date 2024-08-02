@@ -17,22 +17,22 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('categories.index') }}">
                     <i class="mdi mdi-egg-off custom-icon-size"></i>
-                    <span>Perfil</span>
+                    <span>Categoria</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('products.index') }}">
                     <i class="mdi mdi-radiology-box-outline custom-icon-size"></i>
-                    <span>Configuración</span>
+                    <span>Productos</span>
                 </a>
             </li>
             <!-- Otros elementos de menú -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('sales.index') }}">
                     <i class="mdi mdi-ghost-off-outline custom-icon-size"></i>
-                    <span>Aqui nadamas para ocupar espacio</span>
+                    <span>Registro de ventas</span>
                 </a>
             </li>
             <li class="nav-item">

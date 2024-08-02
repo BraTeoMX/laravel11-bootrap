@@ -21,11 +21,35 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     // Rutas para categorías
-    Route::resource('admin/categories', CategoryController::class);
+    Route::resource('admin/categories', CategoryController::class)->names([
+        'index' => 'categories.index',
+        'create' => 'categories.create',
+        'store' => 'categories.store',
+        'show' => 'categories.show',
+        'edit' => 'categories.edit',
+        'update' => 'categories.update',
+        'destroy' => 'categories.destroy',
+    ]);
     
     // Rutas para productos
-    Route::resource('admin/products', ProductController::class);
+    Route::resource('admin/products', ProductController::class)->names([
+        'index' => 'products.index',
+        'create' => 'products.create',
+        'store' => 'products.store',
+        'show' => 'products.show',
+        'edit' => 'products.edit',
+        'update' => 'products.update',
+        'destroy' => 'products.destroy',
+    ]);
 
     // Rutas para ventas
-    Route::resource('sales', SalesController::class);
+    Route::resource('sales', SalesController::class)->names([
+        'index' => 'sales.index',
+        'create' => 'sales.create',
+        'store' => 'sales.store',
+        'show' => 'sales.show',
+        'edit' => 'sales.edit',
+        'update' => 'sales.update',
+        'destroy' => 'sales.destroy',
+    ]);
 });

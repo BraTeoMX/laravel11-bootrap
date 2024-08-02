@@ -10,12 +10,12 @@ class SalesController extends Controller
     public function index()
     {
         $sales = Sale::all();
-        return view('sales.index', compact('sales'));
+        return view('ventas.index', compact('sales'));
     }
 
     public function create()
     {
-        return view('sales.create');
+        return view('ventas.create');
     }
 
     public function store(Request $request)
@@ -26,13 +26,13 @@ class SalesController extends Controller
     public function show($id)
     {
         $sale = Sale::find($id);
-        return view('sales.show', compact('sale'));
+        return view('ventas.show', compact('sale'));
     }
 
     public function edit($id)
     {
         $sale = Sale::find($id);
-        return view('sales.edit', compact('sale'));
+        return view('ventas.edit', compact('sale'));
     }
 
     public function update(Request $request, $id)

@@ -11,13 +11,13 @@ class ProductController extends Controller
     {
         // Aquí podrías obtener productos de la base de datos y pasarlos a la vista
         $products = []; // Esto es solo un ejemplo
-        return view('producto.producto', compact('products'));
+        return view('productos.producto', compact('products'));
     }
 
     // Mostrar el formulario para crear un nuevo producto
     public function create()
     {
-        return view('producto.create');
+        return view('productos.create');
     }
 
     // Almacenar un nuevo producto en la base de datos
@@ -30,14 +30,14 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = []; // Aquí obtienes el producto por ID
-        return view('producto.show', compact('product'));
+        return view('productos.show', compact('product'));
     }
 
     // Mostrar el formulario para editar un producto existente
     public function edit($id)
     {
         $product = []; // Aquí obtienes el producto por ID
-        return view('producto.edit', compact('product'));
+        return view('productos.edit', compact('product'));
     }
 
     // Actualizar un producto existente en la base de datos
