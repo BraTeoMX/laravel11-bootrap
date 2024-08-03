@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="mb-4">Editar Categoría</h1>
     
-    <form action="{{ route('categories.update', $category->id) }}" method="POST">
+    <form action="{{ route('categorias.update', $category->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -16,7 +16,7 @@
             <input type="text" class="form-control" id="description" name="description" value="{{ $category->description }}">
         </div>
         <button type="submit" class="btn btn-primary">Actualizar Categoría</button>
-        <a href="{{ route('categories.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('categorias.index') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection

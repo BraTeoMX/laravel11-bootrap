@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories.index', compact('categories'));
+        return view('categorias.index', compact('categories'));
     }
 
     public function store(Request $request)
@@ -22,13 +22,13 @@ class CategoryController extends Controller
 
         Category::create($validated);
 
-        return redirect()->route('categories.index')
+        return redirect()->route('categorias.index')
             ->with('success', 'Categoría creada exitosamente.');
     }
 
     public function edit(Category $category)
     {
-        return view('categories.edit', compact('category'));
+        return view('categorias.edit', compact('category'));
     }
 
     public function update(Request $request, Category $category)
@@ -40,7 +40,7 @@ class CategoryController extends Controller
 
         $category->update($validated);
 
-        return redirect()->route('categories.index')
+        return redirect()->route('categorias.index')
             ->with('success', 'Categoría actualizada exitosamente.');
     }
 
@@ -48,7 +48,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('categories.index')
+        return redirect()->route('categorias.index')
             ->with('success', 'Categoría eliminada exitosamente.');
     }
 }

@@ -17,13 +17,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('categories.index') }}">
+                <a class="nav-link" href="{{ route('categorias.index') }}">
                     <i class="mdi mdi-egg-off custom-icon-size"></i>
                     <span>Categoria</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('products.index') }}">
+                <a class="nav-link" href="{{ route('productos.index') }}">
                     <i class="mdi mdi-radiology-box-outline custom-icon-size"></i>
                     <span>Productos</span>
                 </a>

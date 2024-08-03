@@ -22,24 +22,24 @@ Route::middleware(['auth'])->group(function () {
 
     // Rutas para categorías
     Route::resource('admin/categories', CategoryController::class)->names([
-        'index' => 'categories.index',
-        'create' => 'categories.create',
-        'store' => 'categories.store',
-        'show' => 'categories.show',
-        'edit' => 'categories.edit',
-        'update' => 'categories.update',
-        'destroy' => 'categories.destroy',
+        'index' => 'categorias.index',
+        'create' => 'categorias.create',
+        'store' => 'categorias.store',
+        'show' => 'categorias.show',
+        'edit' => 'categorias.edit',
+        'update' => 'categorias.update',
+        'destroy' => 'categorias.destroy',
     ]);
     
     // Rutas para productos
     Route::resource('admin/products', ProductController::class)->names([
-        'index' => 'products.index',
-        'create' => 'products.create',
-        'store' => 'products.store',
-        'show' => 'products.show',
-        'edit' => 'products.edit',
-        'update' => 'products.update',
-        'destroy' => 'products.destroy',
+        'index' => 'productos.index',
+        'create' => 'productos.create',
+        'store' => 'productos.store',
+        'show' => 'productos.show',
+        'edit' => 'productos.edit',
+        'update' => 'productos.update',
+        'destroy' => 'productos.destroy',
     ]);
 
     // Rutas para ventas

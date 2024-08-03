@@ -5,7 +5,7 @@
     <h1 class="mb-4">Lista de Categorías</h1>
     
     <!-- Formulario para agregar nueva categoría -->
-    <form action="{{ route('categories.store') }}" method="POST" class="mb-4">
+    <form action="{{ route('categorias.store') }}" method="POST" class="mb-4">
         @csrf
         <div class="row g-3">
             <div class="col-md-4">
@@ -37,8 +37,8 @@
                         <td>{{ $category->description }}</td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline">
+                                <a href="{{ route('categorias.edit', $category->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                                <form action="{{ route('categorias.destroy', $category->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de querer eliminar esta categoría?')">Eliminar</button>
