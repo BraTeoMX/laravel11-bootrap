@@ -21,12 +21,13 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <a class="navbar-brand ms-2" href="{{ url('/') }}">
+                    {{ config('app.name', 'Tienda') }}
+                </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -74,21 +75,20 @@
 
         <main class="py-4">
             <div class="container-fluid">
-                    @auth
-                        <!-- Sidebar -->
-                        @include('layouts.sidebar')
-                    @endauth
-                    <!-- Contenido Principal -->
-                    <main class="row">
-                        @yield('content')
-                    </main>
+                @auth
+                    <!-- Sidebar -->
+                    @include('layouts.sidebar')
+                @endauth
+                <!-- Contenido Principal -->
+                <main class="row">
+                    @yield('content')
+                </main>
             </div>
         </main>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
 
     <!-- Incluye esto justo antes de cerrar la etiqueta </body> de tu archivo Blade -->
     <script src="{{ asset('sweetAlert2/sweetalert2.all.min.js') }}"></script>
